@@ -2,7 +2,7 @@
 Description=GPU mining
 
 [Service]
-ExecStart=/root/nimiq/GPU/sushipool-gpu-miner
+ExecStart=/nimiq/GPU/sushipool-gpu-miner
 
 [Install]
 WantedBy=multi-user.target
