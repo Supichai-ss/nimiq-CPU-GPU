@@ -2,7 +2,7 @@
 Description=CPU mining
 
 [Service]
-ExecStart=/root/nimiq/CPU/skypool-node-client --address=<NQ22 QR5L 6BB5 5G70 6RQ2 DLLQ 968K H8B4 MH7V> --name=<CPU-SERVICE> --pool=us1.nimiq.skypool.org:4000 --miner=7 --server=<ws://us1.nimiq.skypool.org:4000/ >
+ExecStart=/root/nimiq/CPU/skypool-node-client
 
 [Install]
 WantedBy=multi-user.target
