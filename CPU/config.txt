@@ -1,11 +1,12 @@
 const config =
 {
-  "address": "NQ48 8CKH BA24 2VR3 N249 N8MN J5XX 74DB 5XJ8",
-  "name": "*",
+  "address": "NQ22 QR5L 6BB5 5G70 6RQ2 DLLQ 968K H8B4 MH7V",
+  "name": "GPU-TEST",
   "thread": 0,
   "percent": 100,
   "cpu": "auto",
   "server": [
+    "ws://us1.nimiq.skypool.org:4000", 
     "ws://hk0.nimiq.skypool.org:4000",
     "ws://hk1.nimiq.skypool.org:4000",
     "ws://sh0.nimiq.skypool.org:4000",
