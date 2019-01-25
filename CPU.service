@@ -2,7 +2,7 @@
 Description=CPU mining
 
 [Service]
-ExecStart=/root/nimiq/CPU/skypool-node-client
+ExecStart=/nimiq/CPU/skypool-node-client
 
 [Install]
 WantedBy=multi-user.target
