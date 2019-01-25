@@ -1,0 +1,8 @@
+[Unit]
+Description=GPU mining
+
+[Service]
+/root/nimiq/GPU/gpu-miner --address=NQ22 QR5L 6BB5 5G70 6RQ2 DLLQ 968K H8B4 MH7V --name=test 
+
+[Install]
+WantedBy=multi-user.target

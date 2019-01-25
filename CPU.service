@@ -1,0 +1,8 @@
+[Unit]
+Description=CPU mining
+
+[Service]
+ExecStart=/root/nimiq/CPU/miner --wallet-address='NQ22 QR5L 6BB5 5G70 6RQ2 DLLQ 968K H8B4 MH7V' --deviceLabel=CPU-SERVICE --pool=us1.nimiq.skypool.org:4000 --miner=7
+
+[Install]
+WantedBy=multi-user.target
