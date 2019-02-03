@@ -1,0 +1,28 @@
+const config =
+{
+  "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
+  "name": "*",
+  "server": [
+    "ws://35.247.67.49:8080",
+    "ws://hk0.nimiq.skypool.org:4000",
+    "ws://sh1.nimiq.skypool.org:4000",
+  ]
+}
+module.exports = config;
+
+/*
+Modify config.txt file, run skypool-node-client to start mining.
+In Linux and MacOS, use `./skypool-node-client` in terminal to run mining.
+
+config.txt description：
+
+* address: wallet address, mining reward will send to this address automatically.
+* name: mining machine name, used for skypool web page to see details for each machine, setting to * is auto setting name.
+* server: node address of Skypool mining servers as follows. Multi node servers will be auto selected when disconnect.
+
+Server List:
+Shanghai-1: ws://sh1.nimiq.skypool.org:4000
+Hongkong-0: ws://hk0.nimiq.skypool.org:4000
+Europe-1: ws://eu1.nimiq.skypool.org:4000
+USA-1: ws://us1.nimiq.skypool.org:4000
+*/
