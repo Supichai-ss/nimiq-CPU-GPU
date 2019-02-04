@@ -1,16 +1,12 @@
 const config =
 {
   "address": "NQ66 TGC4 SMJU QSXB AQ2Y 2C0U 0GEF E6CH LNDT",
-  "name": "*",
+  "name": "PK13-1-CPU",
   "thread": 0,
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"ws://35.247.67.49:8080",
-    "ws://us1.nimiq.skypool.org:4000", 
-    "ws://hk0.nimiq.skypool.org:4000",
-    "ws://hk1.nimiq.skypool.org:4000",
-    "ws://sh0.nimiq.skypool.org:4000",
+	"ws://68.183.22.36:8080",
   ]
 }
 module.exports = config;

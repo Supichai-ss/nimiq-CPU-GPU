@@ -1,11 +1,9 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "*",
+  "name": "PK13-1-GPU",
   "server": [
-    "ws://35.247.67.49:8080",
-    "ws://hk0.nimiq.skypool.org:4000",
-    "ws://sh1.nimiq.skypool.org:4000",
+	"ws://68.183.22.36:8080",
   ]
 }
 module.exports = config;
