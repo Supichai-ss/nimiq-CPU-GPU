@@ -4,6 +4,7 @@ const config =
   "name": "PK12-GPU",
   "server": [
 	"ws://68.183.22.36:8080",
+  "ws://157.230.159.128:8080",
   ]
 }
 module.exports = config;

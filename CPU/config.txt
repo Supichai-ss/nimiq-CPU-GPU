@@ -7,6 +7,7 @@ const config =
   "cpu": "auto",
   "server": [
 	"ws://68.183.22.36:8080",
+  "ws://157.230.159.128",
   ]
 }
 module.exports = config;
