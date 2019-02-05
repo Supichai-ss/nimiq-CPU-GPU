@@ -1,7 +1,7 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "PK13-1-GPU",
+  "name": "PK12-GPU",
   "server": [
 	"ws://68.183.22.36:8080",
   ]
