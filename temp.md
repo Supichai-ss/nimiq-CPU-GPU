@@ -54,4 +54,3 @@ mv /nimiq/CPU/config-PK-CPU.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
-reboot
