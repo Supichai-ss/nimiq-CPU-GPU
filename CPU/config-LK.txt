@@ -1,12 +1,16 @@
 const config =
 {
   "address": "NQ66 TGC4 SMJU QSXB AQ2Y 2C0U 0GEF E6CH LNDT",
+<<<<<<< HEAD
   "name": "TEMP-LK08-CPU",
+=======
+  "name": "TEMP-LK-3-07-CPU",
+>>>>>>> 3ffe9f003a364dfe4dff0e20fdacd38806b4b358
   "thread": -1,
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"ws://134.209.65.87:9998",
+	"ws://157.230.80.81:9998",
   ]
 }
 module.exports = config;
