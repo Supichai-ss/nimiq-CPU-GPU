@@ -1,12 +1,12 @@
 const config =
 {
   "address": "NQ66 TGC4 SMJU QSXB AQ2Y 2C0U 0GEF E6CH LNDT",
-  "name": "AK-3-CPU",
+  "name": "AK-4-CPU",
   "thread": -1,
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"ws://134.209.213.58:9998",
+	"ws://178.128.8.12:9998",
   ]
 }
 module.exports = config;
