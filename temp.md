@@ -25,8 +25,11 @@ https://m.do.co/c/719463e5629a
 OHIO
 ami-05d52a8e61c8527cb
 
-OREGON
-ami-05db487363540700b
+OREGON G3
+ami-0b14ca53e0cd4215f
+
+OREGON P3
+ami-09f45bca24cfc4978
 
 #!/bin/bash
 apt-get upgrade -y
