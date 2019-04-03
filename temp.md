@@ -22,14 +22,17 @@ sh NVIDIA-Linux-x86_64-410.79.run
 
 https://m.do.co/c/719463e5629a
 
-OHIO
+OHIO g3
 ami-05d52a8e61c8527cb
 
 OREGON G3
-ami-0b14ca53e0cd4215f
+ami-05db487363540700b
 
-OREGON P3
-ami-09f45bca24cfc4978
+ohio P3
+ami-05a306916294b491a
+
+OREGON
+
 
 #!/bin/bash
 apt-get upgrade -y
@@ -38,8 +41,8 @@ apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-AK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-AK.txt /nimiq/GPU/config.txt 
+mv /nimiq/CPU/config-LK.txt /nimiq/CPU/config.txt
+mv /nimiq/GPU/config-LK.txt /nimiq/GPU/config.txt 
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
@@ -53,7 +56,27 @@ apt-get update -y
 apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-AK-CPU.txt /nimiq/CPU/config.txt
+mv /nimiq/CPU/config-LK-CPU.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
+
+
+
+http://us.download.nvidia.com/tesla/418.40.04/nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+
+sudo apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
+i) dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+ii) apt-get update
+iii) apt-get install cuda-drivers
+iv) reboot
+
+
+#!/bin/bash
+apt-get update -y
+wget http://us.download.nvidia.com/tesla/418.40.04/nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+apt-get update -y
+apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl cuda-drivers
