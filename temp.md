@@ -109,7 +109,7 @@ git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/CPU/skypool-node-client
 
 #Services
-mv /nimiq/CPU/config-PK-VUL.txt /nimiq/CPU/config.txt
+mv /nimiq/CPU/config-LK-VUL.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
