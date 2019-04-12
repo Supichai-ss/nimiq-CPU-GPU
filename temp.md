@@ -83,8 +83,8 @@ apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-PK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-PK.txt /nimiq/GPU/config.txt 
+mv /nimiq/CPU/config-LK.txt /nimiq/CPU/config.txt
+mv /nimiq/GPU/config-LK.txt /nimiq/GPU/config.txt 
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
