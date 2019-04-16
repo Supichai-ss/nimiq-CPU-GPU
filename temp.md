@@ -56,7 +56,7 @@ apt-get update -y
 apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-PK-CPU.txt /nimiq/CPU/config.txt
+mv /nimiq/CPU/config-AK-CPU.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
@@ -83,8 +83,8 @@ apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-PK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-PK.txt /nimiq/GPU/config.txt 
+mv /nimiq/CPU/config-AK.txt /nimiq/CPU/config.txt
+mv /nimiq/GPU/config-AK.txt /nimiq/GPU/config.txt 
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
@@ -109,7 +109,7 @@ git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/CPU/skypool-node-client
 
 #Services
-mv /nimiq/CPU/config-LK-VUL.txt /nimiq/CPU/config.txt
+mv /nimiq/CPU/config-VUL-218.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
