@@ -22,33 +22,6 @@ sh NVIDIA-Linux-x86_64-410.79.run
 
 https://m.do.co/c/719463e5629a
 
-OHIO g3
-ami-05d52a8e61c8527cb
-
-OREGON G3
-ami-05db487363540700b
-
-ohio P3
-ami-05a306916294b491a
-
-OREGON
-
-
-#!/bin/bash
-apt-get upgrade -y
-apt-get update -y
-apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl
-git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
-chmod +x nimiq/GPU/skypool-node-client
-chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-LK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-LK.txt /nimiq/GPU/config.txt 
-mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
-mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
-systemctl start CPU.service
-systemctl enable CPU.service
-systemctl start GPU.service
-systemctl enable GPU.service
 
 #!/bin/bash
 apt-get upgrade -y
@@ -56,7 +29,7 @@ apt-get update -y
 apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-AK-CPU.txt /nimiq/CPU/config.txt
+mv /nimiq/CPU/config-LK-CPU.txt /nimiq/CPU/config.txt
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 systemctl start CPU.service
 systemctl enable CPU.service
@@ -83,8 +56,8 @@ apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
-mv /nimiq/CPU/config-AK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-AK.txt /nimiq/GPU/config.txt 
+mv /nimiq/CPU/config-LK.txt /nimiq/CPU/config.txt
+mv /nimiq/GPU/config-LK.txt /nimiq/GPU/config.txt 
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
