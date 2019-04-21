@@ -1,0 +1,12 @@
+const config =
+{
+  "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
+  "name": "DigitalOcean-7",
+  "thread": -1,
+  "percent": 100,
+  "cpu": "auto",
+  "server": [
+  "ws://104.248.116.198:9998",
+  ]
+}
+module.exports = config;
