@@ -1,7 +1,7 @@
 const config =
 {
   "address": "NQ66 TGC4 SMJU QSXB AQ2Y 2C0U 0GEF E6CH LNDT",
-  "name": "TEMP-PK-7-03-GPU",
+  "name": "TEMP-PK-7-04-GPU",
   "server": [
   "ws://104.248.116.198:9998",
   ]
