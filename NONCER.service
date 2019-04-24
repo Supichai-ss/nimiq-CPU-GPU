@@ -2,7 +2,7 @@
 Description=noncer mining
 
 [Service]
-ExecStart=/nimiq/noncer/mine.sh
+ExecStart=/nimiq/noncer/noncerpro
 
 [Install]
 WantedBy=multi-user.target
