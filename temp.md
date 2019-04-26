@@ -97,7 +97,7 @@ chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
 chmod +x nimiq/noncer/noncerpro
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
-mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
+mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
 systemctl enable CPU.service
 systemctl start GPU.service
