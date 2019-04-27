@@ -1,9 +1,9 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "Scaleway-LK07-GPU",
+  "name": "Scaleway-PK01-GPU",
   "server": [
-  "ws://104.248.116.198:9998",
+  "ws://us1.nimiq.skypool.org:4000",
   ]
 }
 module.exports = config;
