@@ -1,7 +1,7 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "Scaleway-AK01-GPU",
+  "name": "Scaleway-AK02-GPU",
   "server": [
   "ws://us1.nimiq.skypool.org:4000",
   ]
