@@ -1,7 +1,7 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "Scaleway-AK14-CPU",
+  "name": "Scaleway-AK03-CPU",
   "thread": 0,
   "percent": 100,
   "cpu": "auto",
