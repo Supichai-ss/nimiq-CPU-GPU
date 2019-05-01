@@ -1,12 +1,12 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "Scaleway-LK10-CPU",
+  "name": "Scaleway-PK-9-01-CPU",
   "thread": 0,
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"ws://67.205.149.198:9998",
+	"ws://159.203.188.6:9998",
   ]
 }
 module.exports = config;
