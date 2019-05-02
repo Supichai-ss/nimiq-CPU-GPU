@@ -1,7 +1,7 @@
 const config =
 {
   "address": "NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0",
-  "name": "Scaleway-AK-9-11-GPU",
+  "name": "Scaleway-AK-9-12-GPU",
   "server": [
   "ws://159.203.188.6:9998",
   ]
