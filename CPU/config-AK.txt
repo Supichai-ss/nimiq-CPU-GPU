@@ -6,7 +6,7 @@ const config =
   "percent": 100,
   "cpu": "auto",
   "server": [
-	"wss://us1.nimiq.skypool.org:5000",
+	"ws://eu1.nimiq.skypool.org:4000",
   ]
 }
 module.exports = config;
