@@ -1,0 +1,87 @@
+#!/bin/bash
+ 
+
+PIDFILE="/tmp/-siriusminer--upgrade-service.pid"
+
+# This script is compatible with Mac and Linux
+SCRIPT_PATH=$(dirname "$0")
+UPDATE_MEMO="$SCRIPT_PATH/.update_mem.json"
+
+NUM_CORES=$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 1)
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    MB_MEMORY=$(cat /proc/meminfo | grep MemTotal | awk '{mb =int($2 /1024); print mb}')
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    MB_MEMORY=$(sysctl hw.memsize | awk '{mb =int($2/1024/1024); print mb}')
+else
+
+    node "$SCRIPT_PATH/index.js" "$@"
+   exit
+fi
+
+if [ -f "$SCRIPT_PATH/.update_mem.json" ] ; then 
+	rm "$SCRIPT_PATH/.update_mem.json"
+fi
+if [ -f "/tmp/-siriusminer--upgrade-service.pid" ] ; then 
+	rm "/tmp/-siriusminer--upgrade-service.pid"
+fi
+
+
+# NODE_TLS_REJECT_UNAUTHORIZED=0 
+ function safe_Exit(){
+ 
+	if [ -f "$PIDFILE" ] ; then 
+	rm $PIDFILE
+	fi
+	kill $1 2> /dev/null
+	exit
+}
+
+ #echo " starting /bin/bash $SCRIPT_PATH/.upgrade_service.sh"
+/bin/bash "$SCRIPT_PATH/.upgrade_service.sh"  &  #TODO check config if is disabled not start service.
+SERVICE=$!
+trap " safe_Exit $SERVICE" SIGKILL
+trap "safe_Exit $SERVICE" SIGINT
+trap "safe_Exit $SERVICE" ERR
+ 
+while true ;
+do
+
+#UV_THREADPOOL_SIZE=$NUM_CORES NODE_OPTIONS="--max_old_space_size=$MB_MEMORY"
+ $SCRIPT_PATH/worker "$@"  	
+#node "$SCRIPT_PATH/index.js"  "$@"   
+if [  -f .update_mem.json ] ; then 
+echo "Upgrade Completed. Relaunching"
+echo ""
+sleep 2;
+ process_pid=$(grep -Po '"'"process_pid"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	 
+	
+	install_location=$(grep -Po '"'"install_location"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	new_version=$(grep -Po '"'"new_version"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	platform=$(grep -Po '"'"platform"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	arch=$(grep -Po '"'"arch"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	flavor=$(grep -Po '"'"flavor"'"\s*:\s*"\K([^"]*)' $UPDATE_MEMO )
+	if [ "$install_location" == "~/" ] ; then 
+		install_location="$HOME"
+	fi
+	
+	if [ -d "$install_location/siriusminer-$platform-$arch-$new_version-$flavor" ] ; then 
+			if [ -f "$UPDATE_MEMO" ] ; then 
+				rm "$UPDATE_MEMO"
+			fi
+		
+		break 
+	fi
+ 
+fi
+sleep 15
+done
+
+function goToNEw(){
+	if [ -d "$install_location/siriusminer-$platform-$arch-$new_version-$flavor" ] ; then 
+		cd  "$install_location/siriusminer-$platform-$arch-$new_version-$flavor"
+		./siriusminer
+	fi
+		
+}
+goToNEw

@@ -1,0 +1,6 @@
+{
+  "version": "0.3.9",
+  "flavor": "skylake_avx512",
+  "platform": "linux",
+  "arch": "x64"
+}
