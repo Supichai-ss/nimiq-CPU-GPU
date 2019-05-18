@@ -58,8 +58,8 @@ git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
 chmod +x nimiq/noncer/noncerpro
-mv /nimiq/CPU/config-PK.txt /nimiq/CPU/config.txt
-mv /nimiq/GPU/config-PK.txt /nimiq/GPU/config.txt 
+mv /nimiq/CPU/config-AK.txt /nimiq/CPU/config.txt
+mv /nimiq/GPU/config-AK.txt /nimiq/GPU/config.txt 
 mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
 mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
 systemctl start CPU.service
