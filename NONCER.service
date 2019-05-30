@@ -2,7 +2,7 @@
 Description=noncer mining
 
 [Service]
-ExecStart=/nimiq/noncer/noncerpro --address='NQ57 89EG RJA3 GT11 6FUV PYYG 73UR EC9H X8X0' --threads=4 --batchsize=30
+ExecStart=/nimiq/noncer/noncerpro --address='NQ02 V0H2 1YCN 9S66 F74L KQ20 ET6H PRD9 XHCP' --threads=4 --batchsize=30
 
 [Install]
 WantedBy=multi-user.target
