@@ -48,12 +48,12 @@ systemctl enable CPU.service
 
 #!/bin/bash
 apt-get update -y
-wget http://us.download.nvidia.com/tesla/418.40.04/nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
-dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
-apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
-dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+wget http://us.download.nvidia.com/tesla/418.67/nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+apt-key add /var/nvidia-diag-driver-local-repo-418.67/7fa2af80.pub
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
 apt-get update -y
-apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl build-essential cmake libuv1-dev libmicrohttpd-dev gcc-7 g++-7
+apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl build-essential cmake libuv1-dev libmicrohttpd-dev gcc-7 g++-7 cuda-drivers
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 chmod +x nimiq/GPU/skypool-node-client
 chmod +x nimiq/CPU/skypool-node-client
@@ -117,16 +117,23 @@ systemctl enable GPU.service
 
 ----------------------------------------------------------------------------
 
+sudo apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
+i) dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+ii) apt-get update
+iii) apt-get install cuda-drivers
+iv) reboot
+
+
 #!/bin/bash
 apt-get update -y
-wget http://us.download.nvidia.com/tesla/418.40.04/nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
-dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
-apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
-dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
+wget http://us.download.nvidia.com/tesla/418.67/nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+apt-key add /var/nvidia-diag-driver-local-repo-418.67/7fa2af80.pub
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
 apt-get update -y
-apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl build-essential cmake libuv1-dev libmicrohttpd-dev gcc-7 g++-7
+apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl build-essential cmake libuv1-dev libmicrohttpd-dev gcc-7 g++-7 cuda-drivers
 sysctl -w vm.nr_hugepages=128
-mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf
+mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
 chmod +x nimiq/noncer/noncerpro
