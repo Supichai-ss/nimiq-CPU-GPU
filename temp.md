@@ -145,10 +145,3 @@ systemctl enable GPU.service
 systemctl start webchain.service
 systemctl enable webchain.service
 reboot
-
-
-
-
-
-
-
