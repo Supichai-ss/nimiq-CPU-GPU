@@ -131,7 +131,7 @@ dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
 apt-key add /var/nvidia-diag-driver-local-repo-418.67/7fa2af80.pub
 dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
 apt-get update -y
-apt-get install -y libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev git screen make gcc clinfo curl build-essential cmake libuv1-dev libmicrohttpd-dev gcc-7 g++-7 cuda-drivers
+apt-get install -y git screen make gcc clinfo gcc-7 g++-7 cuda-drivers libmicrohttpd-dev
 sysctl -w vm.nr_hugepages=128
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
