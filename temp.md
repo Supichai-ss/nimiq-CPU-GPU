@@ -103,16 +103,16 @@ systemctl enable CPU.service
 -----------------------------------SCALEWAY---------------------------------------------------
 #!/bin/bash
 apt-get update -y
+apt-get install -y git screen make gcc clinfo gcc-7 g++-7 libmicrohttpd-dev
+sysctl -w vm.nr_hugepages=128
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
-chmod +x nimiq/GPU/skypool-node-client
-chmod +x nimiq/CPU/skypool-node-client
+git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
 chmod +x nimiq/noncer/noncerpro
-mv /nimiq/CPU.service  /etc/systemd/system/CPU.service 
-mv /nimiq/GPU.service  /etc/systemd/system/GPU.service
-systemctl start CPU.service
-systemctl enable CPU.service
-systemctl start GPU.service
-systemctl enable GPU.service
+chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
+mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
+mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
+reboot
 
 
 ----------------------------------------------------------------------------
@@ -136,7 +136,7 @@ sysctl -w vm.nr_hugepages=128
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
 chmod +x nimiq/noncer/noncerpro
-chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
+chmod +x XMRIG-EBCHAIN/webchain-miner/webchain-miner
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service 
