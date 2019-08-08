@@ -98,32 +98,7 @@ mv /nimiq/CPU.service  /etc/systemd/system/CPU.service
 systemctl start CPU.service
 systemctl enable CPU.service
 
----------------------------------------------------------------------------------------------
-
------------------------------------SCALEWAY---------------------------------------------------
-#!/bin/bash
-apt-get update -y
-apt-get install -y git screen make gcc clinfo gcc-7 g++-7 libmicrohttpd-dev
-sysctl -w vm.nr_hugepages=128
-git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
-git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
-chmod +x nimiq/noncer/noncerpro
-chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
-mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
-mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
-mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
-reboot
-
-
-----------------------------------------------------------------------------
-
-sudo apt-key add /var/nvidia-diag-driver-local-repo-418.40.04/7fa2af80.pub
-i) dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.40.04_1.0-1_amd64.deb
-ii) apt-get update
-iii) apt-get install cuda-drivers
-iv) reboot
-
-
+-----------------------------------AZURE----------------------------------------------------
 #!/bin/bash
 apt-get update -y
 wget http://us.download.nvidia.com/tesla/418.67/nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
@@ -136,7 +111,42 @@ sysctl -w vm.nr_hugepages=128
 git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
 chmod +x nimiq/noncer/noncerpro
-chmod +x XMRIG-EBCHAIN/webchain-miner/webchain-miner
+chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
+mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
+mv /nimiq/NONCER-Azure.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service 
+systemctl start GPU.service
+systemctl enable GPU.service
+systemctl start webchain.service
+systemctl enable webchain.service
+reboot
+-----------------------------------SCALEWAY---------------------------------------------------
+#!/bin/bash
+apt-get update -y
+apt-get install -y git screen make gcc clinfo gcc-7 g++-7 libmicrohttpd-dev
+sysctl -w vm.nr_hugepages=128
+git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
+git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
+chmod +x nimiq/noncer/noncerpro
+chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
+mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
+mv /nimiq/NONCER-SC.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
+reboot
+-----------------------------------EC2-------------------------------------
+#!/bin/bash
+apt-get update -y
+wget http://us.download.nvidia.com/tesla/418.67/nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+apt-key add /var/nvidia-diag-driver-local-repo-418.67/7fa2af80.pub
+dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
+apt-get update -y
+apt-get install -y git screen make gcc clinfo gcc-7 g++-7 cuda-drivers libmicrohttpd-dev
+sysctl -w vm.nr_hugepages=128
+git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
+git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
+chmod +x nimiq/noncer/noncerpro
+chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service 
