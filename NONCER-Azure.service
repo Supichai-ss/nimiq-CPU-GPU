@@ -2,7 +2,7 @@
 Description=noncer mining
 
 [Service]
-ExecStart=/nimiq/noncer/noncerpro --name=PK-V-11-02-Azure --address='NQ69 84KV 0998 6RV5 FBVH 2SY8 HSK4 9PDM RQQ3' --server=nimiq.icemining.ca --port=2053 --mode=dumb
+ExecStart=/nimiq/noncer/noncerpro --name=PK-V-11-03-Azure --address='NQ69 84KV 0998 6RV5 FBVH 2SY8 HSK4 9PDM RQQ3' --server=nimiq.icemining.ca --port=2053 --mode=dumb
 
 [Install]
 WantedBy=multi-user.target
