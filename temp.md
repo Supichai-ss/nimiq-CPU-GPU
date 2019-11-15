@@ -125,9 +125,6 @@ reboot
 #!/bin/bash
 apt-get update -y
 wget http://us.download.nvidia.com/tesla/418.67/nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
-
-https://s3.amazonaws.com/nvidia-gaming/NVIDIA-Linux-x86_64-435.22-grid.run
-
 dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
 apt-key add /var/nvidia-diag-driver-local-repo-418.67/7fa2af80.pub
 dpkg -i nvidia-diag-driver-local-repo-ubuntu1804-418.67_1.0-1_amd64.deb
