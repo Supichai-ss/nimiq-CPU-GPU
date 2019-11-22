@@ -2,7 +2,7 @@
 Description=noncer mining
 
 [Service]
-ExecStart=/nimiq/noncer/noncerpro --name=PK-V-46-EC2 --address='NQ15 Y2JU BHX8 UGUT 378A GNMV GEMT MQ7F G8K7' --server=nimiq.icemining.ca --port=2053 --mode=dumb
+ExecStart=/nimiq/noncer/noncerpro --name=PK-V-59-EC2 --address='NQ15 Y2JU BHX8 UGUT 378A GNMV GEMT MQ7F G8K7' --server=nimiq.icemining.ca --port=2053 --mode=dumb
 
 [Install]
 WantedBy=multi-user.target
