@@ -136,7 +136,7 @@ git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
 chmod +x nimiq/noncer/noncerpro
 chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
-mv /nimiq/NONCER.service  /etc/systemd/system/GPU.service
+mv /nimiq/ec2-list/LK-V-03.service  /etc/systemd/system/GPU.service
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service 
 systemctl start GPU.service
 systemctl enable GPU.service
