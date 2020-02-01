@@ -100,6 +100,8 @@ systemctl enable CPU.service
 
 -----------------------------------AZURE----------------------------------------------------
 #!/bin/bash
+
+cd /
 apt-get update -y
 sysctl -w vm.nr_hugepages=128
 git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
