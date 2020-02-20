@@ -1,0 +1,8 @@
+[Unit]
+Description=noncer mining
+
+[Service]
+ExecStart=/nimiq/noncer/noncerpro --name=V-EC2-17 --address='NQ15 Y2JU BHX8 UGUT 378A GNMV GEMT MQ7F G8K7' --server=nimiq.icemining.ca --port=2053 --mode=dumb
+
+[Install]
+WantedBy=multi-user.target
