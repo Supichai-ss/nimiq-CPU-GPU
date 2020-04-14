@@ -122,8 +122,8 @@ mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 apt-get update -y
 apt-get install -y git clinfo cuda-drivers libmicrohttpd-dev
 
-mv /nimiq/noncer/azure-list/V-AZURE-23.service  /etc/systemd/system/GPU.service
-mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE-23.service  /etc/systemd/system/xmrig.service 
+mv /nimiq/noncer/azure-list/V-AZURE-13.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE-13.service  /etc/systemd/system/xmrig.service 
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
 systemctl start GPU.service
 systemctl enable GPU.service
@@ -132,18 +132,40 @@ systemctl enable xmrig.service
 reboot
 
 
+
+cd /
+systemctl stop GPU.service
+systemctl disable GPU.service
+rm -rf nimiq
+git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
+chmod +x nimiq/noncer/noncerpro
+systemctl start GPU.service
+systemctl enable GPU.service
+reboot
+
+
 cd /
 systemctl stop webchain.service
 systemctl disable webchain.service
+systemctl stop xmrig.service
+systemctl disable xmrig.service
+systemctl stop GPU.service
+systemctl disable GPU.service
 rm -rf /etc/systemd/system/webchain.service
 rm -rf XMRIG-WEBCHAIN
+rm -rf nimiq
+git clone https://github.com/Supichai-ss/nimiq-CPU-GPU nimiq
 git clone https://github.com/Supichai-ss/XMRIG-WEBCHAIN XMRIG-WEBCHAIN
+chmod +x nimiq/noncer/noncerpro
 chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
 chmod +x XMRIG-WEBCHAIN/xmrig/xmrig
 sysctl -w vm.nr_hugepages=1280
 bash -c "echo vm.nr_hugepages=1280 >> /etc/sysctl.conf"
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
-mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE.service  /etc/systemd/system/xmrig.service
+mv /nimiq/noncer/azure-list/V-AZURE-25.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE-25.service  /etc/systemd/system/xmrig.service
+systemctl start GPU.service
+systemctl enable GPU.service
 systemctl start xmrig.service
 systemctl enable xmrig.service
 reboot
