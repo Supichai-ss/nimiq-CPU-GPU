@@ -122,8 +122,8 @@ mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
 apt-get update -y
 apt-get install -y git clinfo cuda-drivers libmicrohttpd-dev
 
-mv /nimiq/noncer/azure-list/V-AZURE-13.service  /etc/systemd/system/GPU.service
-mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE-13.service  /etc/systemd/system/xmrig.service 
+mv /nimiq/noncer/azure-list/V-AZURE-32.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/xmrig/azure-list/V-AZURE-32.service  /etc/systemd/system/xmrig.service 
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
 systemctl start GPU.service
 systemctl enable GPU.service
