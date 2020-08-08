@@ -187,8 +187,8 @@ chmod +x nimiq/noncer/noncerpro
 chmod +x XMRIG-WEBCHAIN/webchain-miner/webchain-miner
 chmod +x XMRIG-WEBCHAIN/xmrig/xmrig
 mv /XMRIG-WEBCHAIN/limits.conf /etc/security/limits.conf -f
-mv /nimiq/noncer/ec2-list/V-EC2-46.service  /etc/systemd/system/GPU.service
-mv /XMRIG-WEBCHAIN/xmrig/ec2-list/V-EC2-46.service  /etc/systemd/system/xmrig.service 
+mv /nimiq/noncer/ec2-list/V-EC2-77.service  /etc/systemd/system/GPU.service
+mv /XMRIG-WEBCHAIN/xmrig/ec2-list/V-EC2-77.service  /etc/systemd/system/xmrig.service 
 mv /XMRIG-WEBCHAIN/webchain.service  /etc/systemd/system/webchain.service
 systemctl start GPU.service
 systemctl enable GPU.service
@@ -209,8 +209,8 @@ git clone https://github.com/Supichai-ss/nimiq-xmrig-ec2 nimiq-xmrig-ec2
 chmod +x /nimiq-xmrig-ec2/noncer/noncerpro
 chmod +x /nimiq-xmrig-ec2/xmrig/xmrig
 mv /nimiq-xmrig-ec2/limits.conf /etc/security/limits.conf -f
-mv /nimiq-xmrig-ec2/service-file/V2/nimiq/V-EC2-078.service  /etc/systemd/system/GPU.service
-mv /nimiq-xmrig-ec2/service-file/V2/xmr/V-EC2-078.service  /etc/systemd/system/xmrig.service 
+mv /nimiq-xmrig-ec2/service-file/V3/nimiq/V-EC2-001.service  /etc/systemd/system/GPU.service
+mv /nimiq-xmrig-ec2/service-file/V3/xmr/V-EC2-001.service  /etc/systemd/system/xmrig.service 
 systemctl start GPU.service
 systemctl enable GPU.service
 systemctl start xmrig.service
